@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Bartender Trainer - AI 비전 기반 조주기능사 실기 트레이닝 AR 솔루션</title>
+    <meta name="description" content="AI 비전 인식과 AR 기술을 결합하여 실제 재료 없이도 조주기능사 실기 시험을 완벽하게 대비할 수 있는 스마트 실기 트레이닝 보조 솔루션입니다.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS Stylings -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav id="main-nav" class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍸</span>
+                <span class="logo-text">AR BAR <span class="highlight">TRAINER</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#problem">해결과제</a></li>
+                <li><a href="#features">핵심기술</a></li>
+                <li><a href="#simulator">AR시뮬레이터</a></li>
+                <li><a href="#devices">지원기기</a></li>
+                <li><a href="#business">비즈니스</a></li>
+            </ul>
+            <a href="#simulator" class="nav-cta btn btn-glow">체험하기</a>
+            <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="메뉴 열기">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-container">
+                    <span class="hero-badge"><i data-lucide="sparkles"></i> AI Vision & Augmented Reality</span>
+                </div>
+                <h1 class="hero-title font-outfit">
+                    현실의 재료 없이<br>
+                    완성하는 <span class="text-gradient">완벽한 조주 실습</span>
+                </h1>
+                <p class="hero-subtitle">
+                    비싼 재료와 시간 낭비 없이, AI 비전 센싱과 AR 글래스로 조주기능사 실기 시험을 혁신하세요. 시야 위 가이드를 보며 완벽한 제조 동작을 훈련합니다.
+                </p>
+                <div class="hero-actions">
+                    <a href="#simulator" class="btn btn-primary btn-lg"><i data-lucide="play-circle"></i> 가상 AR 체험하기</a>
+                    <a href="#features" class="btn btn-secondary btn-lg">기술 더 알아보기</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">0원</span>
+                        <span class="stat-label">소모성 재료비</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">무제한</span>
+                        <span class="stat-label">조주 반복 훈련</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">1:1</span>
+                        <span class="stat-label">실시간 AI 피드백</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERO VISUAL (AR View Simulator Mockup) -->
+            <div class="hero-visual">
+                <div class="glass-device-frame">
+                    <div class="ar-hud-overlay">
+                        <div class="hud-header">
+                            <span class="hud-recipe"><i data-lucide="bookmark"></i> 드라이 마티니 (Dry Martini)</span>
+                            <span class="hud-timer text-danger"><i data-lucide="clock"></i> 02:45 / 07:00</span>
+                        </div>
+                        <div class="hud-center">
+                            <div class="hud-target-indicator animate-pulse">
+                                <span class="indicator-label">지거 (Jigger) 인식됨</span>
+                                <div class="pouring-progress-bar">
+                                    <div class="pouring-fill" style="width: 80%;"></div>
+                                </div>
+                                <span class="indicator-value">드라이 버무스 0.5 oz 투입 중...</span>
+                            </div>
+                        </div>
+                        <div class="hud-feedback-toast warning-toast">
+                            <span class="toast-icon">⚠️</span>
+                            <span class="toast-text">경고: 지거 기울기가 15도 초과되었습니다! 천천히 푸어링하세요.</span>
+                        </div>
+                    </div>
+                    <div class="glass-bg-graphic">
+                        <svg viewBox="0 0 400 400" width="100%" height="100%">
+                            <!-- Cocktail glass outline -->
+                            <path d="M 120 100 L 280 100 L 210 240 L 210 320 L 250 320 L 250 330 L 150 330 L 150 320 L 190 320 L 190 240 Z" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="3" />
+                            <!-- Liquid inside -->
+                            <path class="fluid-anim" d="M 140 140 L 260 140 L 210 240 Z" fill="url(#neon-gradient)" opacity="0.6"/>
+                            <!-- Neural net points representing AI vision -->
+                            <circle cx="120" cy="100" r="5" fill="#00f5d4" />
+                            <line x1="120" y1="100" x2="160" y2="70" stroke="#00f5d4" stroke-width="1.5" stroke-dasharray="3,3" />
+                            <circle cx="160" cy="70" r="4" fill="#00f5d4" />
+
+                            <circle cx="280" cy="100" r="5" fill="#00f5d4" />
+                            <line x1="280" y1="100" x2="310" y2="130" stroke="#00f5d4" stroke-width="1.5" stroke-dasharray="3,3" />
+                            <circle cx="310" cy="130" r="4" fill="#00f5d4" />
+
+                            <circle cx="210" cy="240" r="5" fill="#ff007a" />
+                            <line x1="210" y1="240" x2="270" y2="260" stroke="#ff007a" stroke-width="1.5" stroke-dasharray="3,3" />
+                            <circle cx="270" cy="260" r="4" fill="#ff007a" />
+                            
+                            <defs>
+                                <linearGradient id="neon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff9f1c" />
+                                    <stop offset="100%" stop-color="#ff007a" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROBLEM & SOLUTION SECTION -->
+    <section id="problem" class="problem-section container">
+        <div class="section-header text-center">
+            <span class="section-tag">Challenges & Solution</span>
+            <h2 class="section-title">조주 실기 실습, 이제는 디지털로 혁신합니다</h2>
+            <p class="section-desc">기존 바텐더 학원과 개인 연습의 높은 장벽을 허물어 더욱 똑똑하고 비용 효율적인 교육 환경을 만듭니다.</p>
+        </div>
+
+        <div class="problem-grid">
+            <!-- Problem Card -->
+            <div class="card problem-card">
+                <h3 class="card-title text-danger"><i data-lucide="alert-triangle"></i> 기존 실습의 3대 장벽</h3>
+                <ul class="problem-list">
+                    <li>
+                        <span class="list-num">1</span>
+                        <div class="list-text">
+                            <strong>끝없는 소모품 비용 부담</strong>
+                            <p>기니시용 과일, 얼음, 고가의 리큐르 및 베이스 스피릿 등 실습할 때마다 부재료 비용이 지속적으로 지출됩니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="list-num">2</span>
+                        <div class="list-text">
+                            <strong>피드백의 한계 및 일방성</strong>
+                            <p>강사 한 명이 다수의 수강생을 개별 지도하므로, 계량 실수나 부적절한 셰이킹 자세를 실시간으로 교정하기 힘듭니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="list-num">3</span>
+                        <div class="list-text">
+                            <strong>방대한 레시피 암기의 압박</strong>
+                            <p>실기 시험에 출제되는 칵테일은 총 39가지. 재료 선택부터 기법(빌드, 스터, 셰이크, 플로트)까지 복잡한 과정을 몸으로 외우기 어렵습니다.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Solution Card -->
+            <div class="card solution-card">
+                <h3 class="card-title text-success"><i data-lucide="check-circle-2"></i> AR 조주 트레이닝의 해법</h3>
+                <ul class="solution-list">
+                    <li>
+                        <span class="list-icon-box"><i data-lucide="dollar-sign"></i></span>
+                        <div class="list-text">
+                            <strong>무비용 훈련용 프랍 활용 (0원 실습)</strong>
+                            <p>물이나 술 대신 빈 병과 마커 기반의 스마트 훈련 도구를 활용해 소모품 소비 없이 무제한 모의 훈련을 진행할 수 있습니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="list-icon-box"><i data-lucide="eye"></i></span>
+                        <div class="list-text">
+                            <strong>AI 비전 기반 1:1 밀착 코칭</strong>
+                            <p>카메라가 사용자의 도구 선택, 병의 기울기, 셰이킹 스피드, 상반신 자세를 정밀 트래킹해 감점 요소를 즉각 피드백합니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="list-icon-box"><i data-lucide="navigation"></i></span>
+                        <div class="list-text">
+                            <strong>시야 속 인터랙티브 네비게이션 가이드</strong>
+                            <p>AR 글래스 화면 위에 레시피 순서, 요구량, 타이머를 단계별 플로팅 가이드로 띄워 자연스러운 절차 체득을 돕습니다.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE FEATURES SECTION -->
+    <section id="features" class="features-section">
+        <div class="features-bg-lights"></div>
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Core Technology</span>
+                <h2 class="section-title">최첨단 AR 및 AI 비전 기술의 집약</h2>
+                <p class="section-desc">조주기능사 실기 시험의 규격에 특화된 독자적인 센싱 기술을 적용했습니다.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card glass-card">
+                    <div class="feat-icon-wrapper cyan">
+                        <i data-lucide="scan-face"></i>
+                    </div>
+                    <h3>AR 인식 프랍 기반 도구 식별</h3>
+                    <p>빈 병, 지거, 셰이커 등에 마커나 라벨을 배치하여 손 가림 현상에서도 99% 정확도로 도구를 추적합니다. 투명한 글라스는 전용 코스터 마커로 식별하여 안정성을 배가했습니다.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card glass-card">
+                    <div class="feat-icon-wrapper amber">
+                        <i data-lucide="layers"></i>
+                    </div>
+                    <h3>인터랙티브 레시피 HUD 가이드</h3>
+                    <p>현재 단계에서 넣어야 할 재료, 계량 용량, 최적의 기법을 실시간 증강현실 플로팅 UI로 표시하여, 몸이 레시피와 절차를 직관적으로 외울 수 있도록 돕습니다.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card glass-card">
+                    <div class="feat-icon-wrapper pink">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <h3>계량 및 푸어링 동작 보조</h3>
+                    <p>기울기 센서 없이 AI 카메라만으로 사용자의 병 기울기 각도와 푸어링 모션을 감지합니다. 계량 생략이나 과도하게 빠른 푸어링 같은 감점 행동을 사전 예방합니다.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card glass-card">
+                    <div class="feat-icon-wrapper violet">
+                        <i data-lucide="person-standing"></i>
+                    </div>
+                    <h3>포즈 추정 셰이킹 분석</h3>
+                    <p>경량화된 온디바이스 AI 포즈 모델을 통해 셰이킹 시 사용자의 손목 스냅 변화량, 어깨 각도, 셰이킹 왕복 빈도와 시간을 분석하여 바른 모션을 길러줍니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SIMULATOR (THE WOW FACTOR) -->
+    <section id="simulator" class="simulator-section container">
+        <div class="section-header text-center">
+            <span class="section-tag">Try It Yourself</span>
+            <h2 class="section-title">AR 트레이닝 가상 시뮬레이터</h2>
+            <p class="section-desc">웹 브라우저에서 실제 솔루션의 AR HUD 가이드와 AI 피드백을 가상으로 체험해보세요.</p>
+        </div>
+
+        <div class="sim-dashboard glass-card">
+            <!-- Left Panel: Session Options & Action Panel -->
+            <div class="sim-controls">
+                <div class="sim-panel-header">
+                    <h4><i data-lucide="sliders"></i> 트레이닝 컨트롤 패널</h4>
+                </div>
+                
+                <!-- Step 1: Choose Cocktail -->
+                <div class="control-group" id="sim-step-1">
+                    <span class="group-title">1단계: 과제 선택 (칵테일 레시피)</span>
+                    <div class="recipe-selector">
+                        <button class="recipe-btn active" data-recipe="martini">
+                            <span class="recipe-icon">🍸</span>
+                            <div class="recipe-info">
+                                <strong class="recipe-name">드라이 마티니</strong>
+                                <span class="recipe-meta">스터 기법 / 믹싱글라스</span>
+                            </div>
+                        </button>
+                        <button class="recipe-btn" data-recipe="sour">
+                            <span class="recipe-icon">🥃</span>
+                            <div class="recipe-info">
+                                <strong class="recipe-name">위스키 사워</strong>
+                                <span class="recipe-meta">셰이킹 기법 / 셰이커</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Tool selection / Handlers -->
+                <div class="control-group disabled" id="sim-step-2">
+                    <span class="group-title">2단계: 조주 도구 쥐기</span>
+                    <div class="tool-picker">
+                        <button class="tool-btn" data-tool="jigger" disabled>
+                            <i data-lucide="concierge-bell"></i> 지거 (Jigger)
+                        </button>
+                        <button class="tool-btn" data-tool="spoon" disabled>
+                            <i data-lucide="corner-right-down"></i> 바 스푼 (Bar Spoon)
+                        </button>
+                        <button class="tool-btn" data-tool="shaker" disabled>
+                            <i data-lucide="combine"></i> 셰이커 (Shaker)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Interactive Slider / Button for action -->
+                <div class="control-group disabled" id="sim-step-3">
+                    <span class="group-title">3단계: 가상 조주 모션 수행</span>
+                    
+                    <!-- Pouring Action Interface -->
+                    <div class="action-interface" id="pour-interface" style="display: none;">
+                        <label for="pouring-range" class="action-label">
+                            <span>병 기울이기 (푸어링 속도 조절)</span>
+                            <span id="tilt-angle" class="text-gradient">0° (수직)</span>
+                        </label>
+                        <input type="range" id="pouring-range" min="0" max="90" value="0" disabled>
+                        <div class="pour-btn-wrapper">
+                            <button id="pour-hold-btn" class="btn btn-primary btn-block" disabled>푸어링 버튼을 길게 누르세요</button>
+                        </div>
+                    </div>
+
+                    <!-- Stirring Action Interface -->
+                    <div class="action-interface" id="stir-interface" style="display: none;">
+                        <span class="action-label">바 스푼으로 믹싱글라스 젓기 (스터)</span>
+                        <p class="action-subtext">바 스푼 돌리기 버튼을 클릭하여 스터링 동작을 완료하세요.</p>
+                        <button id="stir-action-btn" class="btn btn-secondary btn-block" disabled>
+                            <i data-lucide="rotate-cw"></i> 믹싱글라스 스터링 (0 / 10회)
+                        </button>
+                    </div>
+
+                    <!-- Shaking Action Interface -->
+                    <div class="action-interface" id="shake-interface" style="display: none;">
+                        <span class="action-label">셰이커 흔들기 (셰이킹 동작)</span>
+                        <p class="action-subtext">아래 셰이킹 버튼을 빠르게 연타하여 셰이킹 게이지를 채우세요!</p>
+                        <div class="shake-bar-bg">
+                            <div id="shake-bar-fill" class="shake-fill"></div>
+                        </div>
+                        <button id="shake-action-btn" class="btn btn-accent btn-block" disabled>
+                            ⚡ 셰이킹 액션 연타! (0%)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="sim-actions-footer">
+                    <button id="start-session-btn" class="btn btn-primary btn-block">트레이닝 시작</button>
+                    <button id="reset-session-btn" class="btn btn-secondary btn-block" style="display: none;">세션 초기화</button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Virtual AR Camera / Viewport -->
+            <div class="sim-viewport">
+                <div class="viewport-overlay">
+                    <!-- AR Mode indicator -->
+                    <div class="viewport-hud-tag"><span class="hud-dot"></span> LIVE AR VIEW</div>
+                    
+                    <!-- HUD Instructions -->
+                    <div class="viewport-guide-card">
+                        <div class="guide-title"><i data-lucide="info"></i> AR 가이드 시스템</div>
+                        <div id="viewport-guide-text" class="guide-body">
+                            [트레이닝 시작] 버튼을 누르면 AR 카메라 시뮬레이션이 활성화됩니다.
+                        </div>
+                    </div>
+
+                    <!-- Live Pouring visualizer inside HUD -->
+                    <div class="fluid-level-indicator" id="fluid-indicator" style="display: none;">
+                        <div class="indicator-cup">
+                            <div class="cup-fill-level" id="cup-fill-height" style="height: 0%;"></div>
+                        </div>
+                        <div class="indicator-texts">
+                            <span class="cup-label">지거 (Jigger) 투입량</span>
+                            <strong class="cup-value" id="cup-current-value">0.0 oz / 1.5 oz</strong>
+                        </div>
+                    </div>
+
+                    <!-- HUD Feedbacks -->
+                    <div class="viewport-toast" id="viewport-feedback-toast" style="display: none;">
+                        <span id="toast-icon">✨</span>
+                        <span id="toast-text">재료 감지 대기 중...</span>
+                    </div>
+
+                    <!-- Center graphic indicating tracking target -->
+                    <div class="viewport-reticle" id="viewport-reticle">
+                        <div class="reticle-line l1"></div>
+                        <div class="reticle-line l2"></div>
+                        <div class="reticle-label" id="reticle-label">마커 스캔 중...</div>
+                    </div>
+
+                    <!-- Virtual Bartending Objects representation (visual sandbox) -->
+                    <div class="visual-sandbox" id="visual-sandbox">
+                        <!-- Martini glass representation -->
+                        <div class="sandbox-glass martini-glass" id="glass-object">
+                            <div class="sandbox-fluid" id="glass-fluid"></div>
+                        </div>
+                        <!-- Bottle pouring animation -->
+                        <div class="sandbox-bottle" id="bottle-object" style="display: none;">
+                            <div class="pour-stream" id="pour-stream" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video / Simulation Background -->
+                <div class="viewport-scene-bg">
+                    <div class="grid-mesh"></div>
+                    <div class="ambient-glow"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training Report Modal (Triggered on completion) -->
+        <div class="report-overlay" id="report-modal" style="display: none;">
+            <div class="report-container glass-card animate-zoom">
+                <div class="report-header">
+                    <h3>📊 AI 조주 실기 수행 리포트</h3>
+                    <button class="close-report-btn" id="close-report-btn">&times;</button>
+                </div>
+                <div class="report-body">
+                    <div class="score-circle-wrapper">
+                        <div class="score-circle">
+                            <span id="report-score">92</span>
+                            <span class="score-max">/ 100</span>
+                        </div>
+                        <span class="score-grade text-gradient" id="report-grade">합격 합격권 (PASS)</span>
+                    </div>
+
+                    <div class="report-details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label"><i data-lucide="check-square" class="text-success"></i> 레시피 순서</span>
+                            <strong class="detail-value" id="val-sequence">정상 (100%)</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i data-lucide="gauge" class="text-warning"></i> 계량 오차</span>
+                            <strong class="detail-value" id="val-accuracy">최우수 (오차 +0.1 oz)</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i data-lucide="clock" class="text-info"></i> 제한 시간 준수</span>
+                            <strong class="detail-value" id="val-time">통과 (45초 소요)</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label"><i data-lucide="activity" class="text-violet"></i> 동작 완수율</span>
+                            <strong class="detail-value" id="val-motion">스터/셰이킹 충족함</strong>
+                        </div>
+                    </div>
+
+                    <div class="report-critique glass-card">
+                        <h5 class="critique-title"><i data-lucide="alert-circle" class="text-accent"></i> AI 실시간 모션 총평</h5>
+                        <p id="report-critique-text">
+                            전반적인 레시피 실행 순서와 도구 식별 흐름이 우수합니다. 스터 기법 실행 중 믹싱글라스 수평 유지도가 일시적으로 흔들렸으나, 제한 시간 기준 내 조주를 잘 이행하셨습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button id="report-restart-btn" class="btn btn-primary">다시 훈련하기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEVICE SHOWCASE SECTION -->
+    <section id="devices" class="devices-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Device Compatibility</span>
+                <h2 class="section-title">환경에 따른 다각적 하드웨어 연동</h2>
+                <p class="section-desc">강력한 성능의 MR HMD부터 가볍고 실용적인 AR 글래스, 학습 관리를 돕는 모바일 앱까지 최적화되어 작동합니다.</p>
+            </div>
+
+            <!-- Tab UI -->
+            <div class="device-tabs-wrapper">
+                <div class="device-tabs">
+                    <button class="tab-btn active" data-tab="ar-glasses">
+                        <i data-lucide="glasses"></i> AR 글래스 모드
+                    </button>
+                    <button class="tab-btn" data-tab="mr-hmd">
+                        <i data-lucide="monitor"></i> MR HMD 모드
+                    </button>
+                    <button class="tab-btn" data-tab="mobile-app">
+                        <i data-lucide="smartphone"></i> 스마트폰 앱
+                    </button>
+                </div>
+
+                <div class="tab-contents-container">
+                    <!-- Tab 1: AR Glasses -->
+                    <div class="tab-content active" id="tab-ar-glasses">
+                        <div class="tab-grid">
+                            <div class="tab-text-panel">
+                                <h3>실제 조주 환경에 수렴하는 핸즈프리 훈련</h3>
+                                <p>가볍고 인체공학적인 AR 글래스를 착용하여 눈앞의 훈련 프랍과 글라스를 완전히 시스루(See-through)로 파악합니다. 시야 가장자리에 정보를 띄워 실기 훈련의 방해를 최소화합니다.</p>
+                                <ul class="spec-list">
+                                    <li><i data-lucide="check-circle" class="text-success"></i> 양손의 자유성을 완벽 보장하는 핸즈프리 조작</li>
+                                    <li><i data-lucide="check-circle" class="text-success"></i> 마커 및 이미지 기반 초경량 에지(Edge) 트래킹</li>
+                                    <li><i data-lucide="check-circle" class="text-success"></i> 1인칭 가이드 기반의 반복적 조주 동작 체득</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image-panel">
+                                <div class="device-illustration shadow-glow">
+                                    <div class="device-tag">개인 실습 및 보급형</div>
+                                    <div class="vector-glasses">
+                                        <i data-lucide="glasses" class="huge-icon text-gradient"></i>
+                                    </div>
+                                    <span class="device-desc">스마트 경량 글래스 최적화</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: MR HMD -->
+                    <div class="tab-content" id="tab-mr-hmd">
+                        <div class="tab-grid">
+                            <div class="tab-text-panel">
+                                <h3>교육기관 및 초기 검증을 위한 고성능 환경</h3>
+                                <p>비디오 패스스루와 심도(Depth) 카메라를 탑재한 MR HMD를 통해 높은 공간 해상도의 정밀 조주 트래킹을 수행합니다. 주류 병의 형태, 셰이커의 미세한 움직임까지 실시간으로 계산합니다.</p>
+                                <ul class="spec-list">
+                                    <li><i data-lucide="check-circle" class="text-info"></i> 심도 카메라 센서를 활용한 왜곡 없는 프랍 매핑</li>
+                                    <li><i data-lucide="check-circle" class="text-info"></i> 교육 기관 내 다인 동시 트레이닝 세션 모니터링</li>
+                                    <li><i data-lucide="check-circle" class="text-info"></i> 입체적인 3D HUD 안내 및 가상 칵테일 입자 렌더링</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image-panel">
+                                <div class="device-illustration shadow-glow">
+                                    <div class="device-tag-mr">전문 학원 및 시험 표준화</div>
+                                    <div class="vector-glasses">
+                                        <i data-lucide="monitor" class="huge-icon text-gradient"></i>
+                                    </div>
+                                    <span class="device-desc">고성능 MR 헤드셋 타겟팅</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Mobile App -->
+                    <div class="tab-content" id="tab-mobile-app">
+                        <div class="tab-grid">
+                            <div class="tab-text-panel">
+                                <h3>훈련 관리, 누적 리포트 및 상시 복습 채널</h3>
+                                <p>모바일 앱을 통해 AR/MR 기기와 연동하고, 훈련하고 싶은 레시피를 편리하게 선택할 수 있습니다. 훈련 세션이 끝나면 수집된 모션 데이터 기반의 누적 약점 리포트를 언제든지 검토할 수 있습니다.</p>
+                                <ul class="spec-list">
+                                    <li><i data-lucide="check-circle" class="text-violet"></i> 기기가 없을 때도 레시피 카드 암기 및 퀴즈 제공</li>
+                                    <li><i data-lucide="check-circle" class="text-violet"></i> 칵테일 제조 39가지 레시피 시뮬레이션 타이머</li>
+                                    <li><i data-lucide="check-circle" class="text-violet"></i> 누적 훈련 기록, 자주 발생하는 실수 데이터 통계 조회</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image-panel">
+                                <div class="device-illustration shadow-glow">
+                                    <div class="device-tag-app">상시 연동 대시보드</div>
+                                    <div class="vector-glasses">
+                                        <i data-lucide="smartphone" class="huge-icon text-gradient"></i>
+                                    </div>
+                                    <span class="device-desc">iOS / Android 동시 지원</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUSINESS & BUSINESS MODEL SECTION -->
+    <section id="business" class="business-section container">
+        <div class="section-header text-center">
+            <span class="section-tag">Business Model</span>
+            <h2 class="section-title">B2B와 B2C를 아우르는 시장 확장성</h2>
+            <p class="section-desc">학원/학교 중심의 전문 교육 패키지부터 개인 독학자를 위한 홈 트레이닝 솔루션까지 구축되어 있습니다.</p>
+        </div>
+
+        <div class="business-grid">
+            <!-- B2B Card -->
+            <div class="biz-card glass-card">
+                <div class="biz-header">
+                    <span class="biz-badge b2b">B2B</span>
+                    <h3>교육기관 전용 패키지</h3>
+                    <p class="biz-desc">바텐더 전문학원, 대학 식음료 학과, 프랜차이즈 트레이닝 센터</p>
+                </div>
+                <ul class="biz-features">
+                    <li><i data-lucide="check"></i> <span>다중 계정 관리 및 수강생 통합 대시보드</span></li>
+                    <li><i data-lucide="check"></i> <span>무제한 모의 시험 평가 라이선스 제공</span></li>
+                    <li><i data-lucide="check"></i> <span>정밀 센서가 탑재된 공식 훈련용 프랍 하드웨어 제공</span></li>
+                    <li><i data-lucide="check"></i> <span>강사 1인 피드백 업무량 최대 70% 감소 기대</span></li>
+                </ul>
+                <div class="biz-footer">
+                    <span class="biz-price">별도 문의</span>
+                    <a href="#contact" class="btn btn-outline-cyan">기관용 도입 문의</a>
+                </div>
+            </div>
+
+            <!-- B2C Card -->
+            <div class="biz-card glass-card highlighted">
+                <div class="biz-header">
+                    <span class="biz-badge b2c">B2C</span>
+                    <h3>개인 홈트레이닝 키트</h3>
+                    <p class="biz-desc">조주기능사 독학 수험생, 홈텐딩 입문자</p>
+                </div>
+                <ul class="biz-features">
+                    <li><i data-lucide="check"></i> <span>모바일 및 보급형 AR 글래스 전용 계정 연동</span></li>
+                    <li><i data-lucide="check"></i> <span>39종 실기 칵테일 가이드 무제한 이용</span></li>
+                    <li><i data-lucide="check"></i> <span>자가 인식용 스마트 마커 스티커 세트 배송</span></li>
+                    <li><i data-lucide="check"></i> <span>매회 실기 연습 리포트 및 오답 노트 보존</span></li>
+                </ul>
+                <div class="biz-footer">
+                    <span class="biz-price">월 구독 19,000원</span>
+                    <a href="#contact" class="btn btn-glow">베타 테스터 신청</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INQUIRY & CONTACT FORM SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="container-small">
+            <div class="section-header text-center">
+                <span class="section-tag">Join the Future</span>
+                <h2 class="section-title">도입 및 제휴 문의</h2>
+                <p class="section-desc">AR 조주 트레이너 솔루션 도입으로 교육 혁신을 먼저 시작해보세요.</p>
+            </div>
+
+            <form class="contact-form glass-card" id="inquiry-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="user-name">이름 / 담당자명</label>
+                        <input type="text" id="user-name" placeholder="홍길동" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">소속 / 기관명</label>
+                        <input type="text" id="organization" placeholder="예: SMIT 바텐더 아카데미">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">이메일 주소</label>
+                    <input type="email" id="email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiry-type">문의 구분</label>
+                    <select id="inquiry-type" required>
+                        <option value="b2b">교육기관 도입 문의 (B2B)</option>
+                        <option value="b2c">개인 베타 테스터 신청 (B2C)</option>
+                        <option value="partnership">하드웨어/콘텐츠 기술 제휴</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">문의 사항</label>
+                    <textarea id="message" rows="5" placeholder="솔루션 도입 규모, 필요 사항 등을 자유롭게 적어주세요." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg"><i data-lucide="send"></i> 문의 접수하기</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon">🍸</span>
+                    <span class="logo-text">AR BAR <span class="highlight">TRAINER</span></span>
+                </div>
+                <p class="footer-desc">
+                    AI 비전 인식 기술과 증강 현실 기술을 결합하여 실기 시험 준비 환경을 디지털 혁신하는 차세대 트레이닝 에코시스템.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h5>바로가기</h5>
+                <ul>
+                    <li><a href="#problem">해결과제</a></li>
+                    <li><a href="#features">핵심기술</a></li>
+                    <li><a href="#simulator">AR 시뮬레이터</a></li>
+                    <li><a href="#devices">기기 연동</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact</h5>
+                <p><i data-lucide="map-pin"></i> 서울특별시 마포구 월드컵북로 (SMIT XR 기술 혁신 센터)</p>
+                <p><i data-lucide="mail"></i> info@arbartrainer.com</p>
+                <p><i data-lucide="phone"></i> 02-1234-5678</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 AR Bartender Trainer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App Engine JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
