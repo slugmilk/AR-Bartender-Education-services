@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발표자료 - AI 비전 기반 조주기능사 실기 트레이닝 AR 솔루션 기획안</title>
+    <meta name="description" content="AI 비전 및 AR 기술을 이용한 조주기능사 실기 교육 혁신 기획안 발표 자료">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="presentation.css">
+</head>
+<body>
+
+    <!-- PRESENTATION HEADER -->
+    <header class="pres-header">
+        <div class="pres-logo">
+            <span class="logo-icon">🍸</span>
+            <span>AR BAR <span class="highlight">TRAINER</span></span>
+        </div>
+        <div class="pres-title">조주기능사 실기 트레이닝 AR 솔루션 기획안</div>
+        <div class="pres-page-num" id="page-num">1 / 9</div>
+    </header>
+
+    <!-- SLIDES WRAPPER -->
+    <div class="slides-container" id="slides-container">
+        
+        <!-- SLIDE 1: TITLE -->
+        <section class="slide active" id="slide-1">
+            <div class="slide-bg-glow"></div>
+            <div class="slide-content title-slide">
+                <span class="slide-badge"><i data-lucide="sparkles"></i> 2026 XR Technology Innovation Proposal</span>
+                <h1 class="slide-main-title">
+                    AI 비전 기반 조주기능사<br>
+                    <span class="text-gradient">실기 트레이닝 AR 솔루션</span>
+                </h1>
+                <p class="slide-sub-title">"실제 소모품 없이 센싱 기술로 체득하는 완벽한 칵테일 조주 실습"</p>
+                <div class="presenter-info">
+                    <span class="info-item"><i data-lucide="user"></i> 발표자 : 김유민 연구원</span>
+                    <span class="info-item"><i data-lucide="building"></i> 소속 : SMIT XR 기술 혁신 센터</span>
+                </div>
+                <button class="btn btn-primary btn-lg start-btn" id="start-presentation">
+                    발표 시작하기 <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: BACKGROUND & PROBLEM -->
+        <section class="slide" id="slide-2">
+            <div class="slide-content">
+                <span class="slide-number-bg">02</span>
+                <div class="slide-header">
+                    <h2 class="slide-title">1. 제안 배경 및 목적</h2>
+                    <p class="slide-desc">기존 조주기능사 실습 교육이 마주한 비효율성과 한계를 극복해야 합니다.</p>
+                </div>
+                <div class="slide-grid-2">
+                    <div class="glass-card slide-card">
+                        <h3><i data-lucide="alert-triangle" class="text-danger"></i> 기존 실습의 3대 비효율</h3>
+                        <ul class="bullet-list">
+                            <li><strong>누적되는 소모성 재료비:</strong> 술, 주스, 과일 가니시, 얼음 등 연습마다 소모되는 비용 발생</li>
+                            <li><strong>개인 연습 공간 부족:</strong> 조주대 및 전용 도구 세팅의 번거로움으로 학원 외 실습 제한</li>
+                            <li><strong>1대다 피드백의 구멍:</strong> 강사 1인이 여러 학생의 자세, 도구 파지, 붓는 각도를 전담하기 곤란</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card slide-card calc-card">
+                        <h3><i data-lucide="calculator" class="text-warning"></i> 실습 재료비 예측 시뮬레이터</h3>
+                        <p class="card-subtext">실제 칵테일 재료비와 AR 트레이너 도입 시 예상 절감 금액을 실시간 계산해보세요.</p>
+                        
+                        <div class="calc-controls">
+                            <div class="range-group">
+                                <label for="calc-students">학습 학생 수: <strong id="val-students">10명</strong></label>
+                                <input type="range" id="calc-students" min="1" max="50" value="10">
+                            </div>
+                            <div class="range-group">
+                                <label for="calc-sessions">학생당 주당 실습 횟수: <strong id="val-sessions">5회</strong></label>
+                                <input type="range" id="calc-sessions" min="1" max="20" value="5">
+                            </div>
+                        </div>
+
+                        <div class="calc-result">
+                            <div class="result-item">
+                                <span>주간 실습 소모비 (기존)</span>
+                                <strong class="text-danger" id="cost-original">125,000원</strong>
+                            </div>
+                            <div class="result-item">
+                                <span>AR 솔루션 도입 시 절감액 (연간)</span>
+                                <strong class="text-success" id="cost-saved">6,500,000원</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: SERVICE OVERVIEW -->
+        <section class="slide" id="slide-3">
+            <div class="slide-content">
+                <span class="slide-number-bg">03</span>
+                <div class="slide-header">
+                    <h2 class="slide-title">2. 서비스 개요</h2>
+                    <p class="slide-desc">실제 액체를 쓰지 않고 스마트 프랍과 AR HUD 화면으로 학습 흐름을 체득합니다.</p>
+                </div>
+                <div class="slide-grid-3">
+                    <div class="glass-card slide-card text-center">
+                        <div class="slide-icon-box cyan"><i data-lucide="box"></i></div>
+                        <h4>훈련용 스마트 프랍</h4>
+                        <p>내용물이 비어있는 병, 셰이커, 지거, 글라스에 AI 인식용 태그 및 특수 마커를 부착하여 실제 도구와 똑같은 손맛을 유지합니다.</p>
+                    </div>
+                    <div class="glass-card slide-card text-center">
+                        <div class="slide-icon-box amber"><i data-lucide="eye"></i></div>
+                        <h4>AI 비전 트래킹</h4>
+                        <p>AR 글래스 카메라를 통해 사용자가 어떤 도구를 선택했는지, 기울기가 얼마인지, 셰이킹 빈도는 어떠한지 실시간 추정합니다.</p>
+                    </div>
+                    <div class="glass-card slide-card text-center">
+                        <div class="slide-icon-box pink"><i data-lucide="smartphone"></i></div>
+                        <h4>모바일 앱 연동</h4>
+                        <p>AR 기기가 없는 야외나 대중교통 등에서도 39가지 레시피 암기 모드, 제한 시간 시뮬레이터 및 누적 훈련 결과 리포트를 확인합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: CORE TECHNOLOGY - MARKER & HUD -->
+        <section class="slide" id="slide-4">
+            <div class="slide-content">
+                <span class="slide-number-bg">04</span>
+                <div class="slide-header">
+                    <h2 class="slide-title">3. 핵심 서비스 기능 (1) - 도구 인식 및 가이드</h2>
+                    <p class="slide-desc">정형화된 시험장 규격에 맞추어 완벽한 오버레이 가이드를 구축합니다.</p>
+                </div>
+                <div class="slide-grid-2">
+                    <div class="glass-card slide-card justify-center">
+                        <h3><i data-lucide="scan" class="text-info"></i> 마커 기반 조주 도구 식별</h3>
+                        <p class="mb-4">반사광이 심한 금속 셰이커나 투명한 유리잔의 특성을 감안한 하이브리드 비전 인식을 실현합니다.</p>
+                        <ul class="bullet-list">
+                            <li><strong>병목 및 측면 다중 마커:</strong> 손 가림(Occlusion)이 발생하더라도 가려지지 않는 각도를 계산해 안정성 확보.</li>
+                            <li><strong>무광 특수 태그:</strong> 셰이커의 금속 반사를 방지하기 위한 컬러 태깅 기법.</li>
+                            <li><strong>전용 코스터 마커:</strong> 투명한 글라스 인식률을 극대화하기 위해 글라스 받침대에 마커를 배치.</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card slide-card viewport-mini shadow-glow">
+                        <div class="mini-hud-title"><i data-lucide="glasses"></i> AR GLASSES HUD SIMULATION</div>
+                        <div class="hud-box">
+                            <div class="hud-element recipe-indicator">
+                                <span class="hud-label">레시피</span>
+                                <strong class="hud-value">위스키 사워 (Whiskey Sour)</strong>
+                            </div>
+                            <div class="hud-element timer-indicator text-danger">
+                                <span class="hud-label">남은 시간</span>
+                                <strong class="hud-value"><i data-lucide="clock"></i> 05:12</strong>
+                            </div>
+                            <div class="hud-target-ring animate-pulse">
+                                <span class="ring-status">계량 지거 인식됨</span>
+                                <div class="ring-bar"><div class="ring-fill"></div></div>
+                                <span class="ring-instruction">버번 위스키 1.5 oz 투입</span>
+                            </div>
+                            <div class="hud-alert-box">
+                                ⚠️ 경고: 수평 불량! 지거를 바닥과 평행하게 유지하세요.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: CORE TECHNOLOGY - POURING & POSTURE -->
+        <section class="slide" id="slide-5">
+            <div class="slide-content">
+                <span class="slide-number-bg">05</span>
+                <div class="slide-header">
+                    <h2 class="slide-title">4. 핵심 서비스 기능 (2) - 모션 계량 및 자세 분석</h2>
+                    <p class="slide-desc">액체 유량 센서 없이도 AI 카메라 센싱으로 행동 점수를 측정합니다.</p>
+                </div>
+                <div class="slide-grid-2">
+                    <div class="glass-card slide-card skeletal-card">
+                        <h3><i data-lucide="person-standing" class="text-violet"></i> AI 포즈 추정 상반신 본 트래킹</h3>
+                        <p class="card-subtext">셰이킹 스피드와 스터링의 회전 궤적을 측정하기 위한 상반신 랜드마크 분석</p>
+                        
+                        <div class="skeletal-visual">
+                            <div class="skeleton-node" style="top: 25%; left: 50%;"></div> <!-- Head -->
+                            <div class="skeleton-node" style="top: 40%; left: 35%;"></div> <!-- L Shoulder -->
+                            <div class="skeleton-node" style="top: 40%; left: 65%;"></div> <!-- R Shoulder -->
+                            <div class="skeleton-node" style="top: 65%; left: 25%;"></div> <!-- L Elbow -->
+                            <div class="skeleton-node" style="top: 65%; left: 75%;"></div> <!-- R Elbow -->
+                            <div class="skeleton-node" style="top: 75%; left: 35%;"></div> <!-- L Wrist -->
+                            <div class="skeleton-node" style="top: 75%; left: 65%;"></div> <!-- R Wrist -->
+                            
+                            <!-- Connecting bones -->
+                            <svg class="skeleton-lines" viewBox="0 0 200 200">
+                                <line x1="100" y1="50" x2="70" y2="80" stroke="var(--color-cyan)" stroke-width="2" />
+                                <line x1="100" y1="50" x2="130" y2="80" stroke="var(--color-cyan)" stroke-width="2" />
+                                <line x1="70" y1="80" x2="130" y2="80" stroke="var(--color-cyan)" stroke-width="2" />
+                                <line x1="70" y1="80" x2="50" y2="130" stroke="var(--color-cyan)" stroke-width="2" stroke-dasharray="3,3" />
+                                <line x1="130" y1="80" x2="150" y2="130" stroke="var(--color-cyan)" stroke-width="2" stroke-dasharray="3,3" />
+                                <line x1="50" y1="130" x2="70" y2="150" stroke="var(--color-cyan)" stroke-width="3" />
+                                <line x1="150" y1="130" x2="130" y2="150" stroke="var(--color-cyan)" stroke-width="3" />
+                            </svg>
+                            <span class="skeletal-status">셰이킹 스냅 감지: 4.8Hz (안정)</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card slide-card justify-center">
+                        <h3><i data-lucide="bar-chart-2" class="text-pink"></i> 푸어링 각도 및 자세 분석 알고리즘</h3>
+                        <p class="mb-4">실제 시험 채점관의 가이드라인에 부합하는 자동 평가 방식을 채택합니다.</p>
+                        <ul class="bullet-list">
+                            <li><strong>기울기-시간 센싱:</strong> 병이 기울어진 각도와 액체가 배출되는 시간 간격을 곱셈 연산하여 가상 용량 유추 (오차 범위 0.15oz 미만).</li>
+                            <li><strong>자세 감점 교정:</strong> 셰이킹 동작 시 팔목이 어깨 선보다 낮게 위치하거나, 스터링 시 바 스푼이 과도하게 눕는 자세 자동 감지.</li>
+                            <li><strong>시간 관리 알림:</strong> 각 칵테일의 완성 제한 시간을 실시간 타이머와 함께 시각/청각 피드백으로 경고.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: SYSTEM CONFIGURATION -->
+        <section class="slide" id="slide-6">
+            <div class="slide-content">
+                <span class="slide-number-bg">06</span>
+                <div class="slide-header">
+                    <h2 class="slide-title">5. 시스템 구성 및 기술 구현 방향</h2>
+                    <p class="slide-desc">실시간 렌더링 성능과 반응 속도를 최우선으로 아키텍처를 설계합니다.</p>
+                </div>
+                <div class="system-diagram-wrapper">
+                    <!-- Column 1 -->
+                    <div class="diagram-node">
+                        <div class="node-box glass-card border-cyan">
+                            <span class="node-title">사용자 환경</span>
+                            <p class="node-content">훈련용 마커 프랍<br>AR 글래스 카메라</p>
+                        </div>
+                    </div>
+                    <div class="diagram-arrow"><i data-lucide="arrow-right"></i></div>
+                    <!-- Column 2 -->
+                    <div class="diagram-node">
+                        <div class="node-box glass-card border-amber">
+                            <span class="node-title">온디바이스 AI 모듈</span>
+                            <p class="node-content">ONNX 경량 객체 감지<br>상반신 포즈 추정 엔진</p>
+                        </div>
+                    </div>
+                    <div class="diagram-arrow"><i data-lucide="arrow-right"></i></div>
+                    <!-- Column 3 -->
+                    <div class="diagram-node">
+                        <div class="node-box glass-card border-pink">
+                            <span class="node-title">Unity 클라이언트</span>
+                            <p class="node-content">실시간 AR HUD 오버레이<br>칵테일 3D 파티클 효과</p>
+                        </div>
+                    </div>
+                    <div class="diagram-arrow"><i data-lucide="arrow-right"></i></div>
+                    <!-- Column 4 -->
+                    <div class="diagram-node">
+                        <div class="node-box glass-card border-violet">
+                            <span class="node-title">서버 / 모바일</span>
+                            <p class="node-content">레시피 DB 동기화<br>연습 결과 리포트 저장</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card slide-card tech-bullets mt-5">
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <strong>1. 경량화 추론</strong>
+                            <span>Unity 내Barracuda 또는 Sentis 프레임워크를 탑재하여 연산 프레임 하락을 최소화합니다.</span>
+                        </div>
+                        <div class="tech-item">
+                            <strong>2. 비동기 렌더링</strong>
+                            <span>도구 스캔 및 포즈 추정을 특정 프레임 주기로 스킵 처리하여 멀미 유발(VR sickness)을 억제합니다.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: USER SCENARIO -->
+        <section class="slide" id="slide-7">
+            <div class="slide-content">
+                <span class="slide-number-bg">07</span>
+                <div class="slide-header">
+                    <h2 class="slide-title">6. 사용자 시나리오 (인터랙티브 타임라인)</h2>
+                    <p class="slide-desc">실습 세션 시작부터 리포트 확인까지 자연스러운 사용자 흐름을 구현합니다.</p>
+                </div>
+                
+                <div class="scenario-timeline-container">
+                    <div class="timeline-navigation">
+                        <button class="time-btn active" data-step="1">1. 과제 선택</button>
+                        <button class="time-btn" data-step="2">2. 도구 배치</button>
+                        <button class="time-btn" data-step="3">3. 마커 스캔</button>
+                        <button class="time-btn" data-step="4">4. 가이드 훈련</button>
+                        <button class="time-btn" data-step="5">5. 리포트 조회</button>
+                    </div>
+
+                    <div class="glass-card slide-card timeline-details shadow-glow" id="timeline-detail-box">
+                        <h3 id="timeline-detail-title">1단계: 과제 선택</h3>
+                        <p id="timeline-detail-desc" class="mb-4">사용자는 모바일 앱 또는 AR 화면 내 UI에서 실습할 칵테일(예: 드라이 마티니)을 선택하고 타이머 훈련을 활성화합니다.</p>
+                        <div class="timeline-visual-mock" id="timeline-visual-mock">
+                            <span>📱 스마트폰 화면: 레시피 목록 대시보드</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: BUSINESS MODEL -->
+        <section class="slide" id="slide-8">
+            <div class="slide-content">
+                <span class="slide-number-bg">08</span>
+                <div class="slide-header">
+                    <h2 class="slide-title">7. 비즈니스 모델 및 활용처</h2>
+                    <p class="slide-desc">안정적인 하드웨어 패키지 공급과 유연한 구독 모델로 동시 진입합니다.</p>
+                </div>
+                <div class="slide-grid-2">
+                    <div class="glass-card slide-card">
+                        <h3>🏢 B2B 교육기관 타겟 패키지</h3>
+                        <p class="card-subtext">직업학교, 바텐더 전문 아카데미, 관광대학교 식음료학과</p>
+                        <ul class="bullet-list">
+                            <li><strong>다중 라이선스 및 통합 대시보드:</strong> 강사가 수십 명 학생의 훈련 진행률과 약점 레시피 통계를 일목요연하게 파악 가능.</li>
+                            <li><strong>정규 시험 모의고사 모드:</strong> 실제 조주기능사 실기 시험과 동일한 타이머 조건 및 감점 알고리즘 적용 평가권 판매.</li>
+                            <li><strong>프랍 하드웨어 일괄 렌탈:</strong> 인식용 마커 스티커가 도포된 훈련용 병 및 도구 키트 일괄 보급.</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card slide-card">
+                        <h3>🏠 B2C 개인 홈트레이닝 솔루션</h3>
+                        <p class="card-subtext">조주기능사 독학 준비 수험생, 홈바(Home Bar) 취미 사용자</p>
+                        <ul class="bullet-list">
+                            <li><strong>모바일 구독형 라이선스:</strong> 월 정액 요금(19,000원) 결제 시 39종 실기 칵테일 가이드 및 자세 체크봇 무제한 개방.</li>
+                            <li><strong>홈 트레이닝 셀프 스티커 키트:</strong> 사용자가 보유한 기존 소장 병이나 빈 병에 붙여 센싱을 켜는 접착식 마커 세트 온라인 판매.</li>
+                            <li><strong>모의 테스트 쿠폰권:</strong> 실기 시험 직전, AI 정밀 채점 리포트를 받아볼 수 있는 프리미엄 테스트권 개별 판매.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: CONCLUSION -->
+        <section class="slide" id="slide-9">
+            <div class="slide-bg-glow" style="background: radial-gradient(circle at 50% 50%, rgba(0, 245, 212, 0.08) 0%, transparent 60%);"></div>
+            <div class="slide-content text-center conclusion-slide">
+                <span class="slide-badge"><i data-lucide="check-square"></i> Conclusion & Value Proposition</span>
+                <h1 class="slide-main-title">
+                    조주 실습의 미래,<br>
+                    <span class="text-gradient">AR 조주 트레이너로 시작합니다</span>
+                </h1>
+                <p class="slide-sub-title max-w-650">
+                    본 솔루션은 칵테일을 쉽게 만드는 임시 도구가 아닙니다. 비용 부담 없는 반복 훈련 환경을 구축하여 조주기능사 수험생의 자격 취득 확률을 증대하고 교육의 디지털 전환을 이끄는 실용적인 XR 플랫폼입니다.
+                </p>
+                <div class="qna-box">
+                    <h3>Q & A</h3>
+                    <p>발표를 경청해 주셔서 감사합니다. 질문이 있으시면 편하게 말씀해 주시기 바랍니다.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- PRESENTATION DASHBOARD / NAVIGATION CONTROLS -->
+    <div class="pres-controls">
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+        <div class="pres-buttons">
+            <button class="nav-arrow" id="prev-slide" aria-label="이전 슬라이드"><i data-lucide="chevron-left"></i></button>
+            <div class="slide-dots" id="slide-dots">
+                <!-- Will be dynamically filled by JS -->
+            </div>
+            <button class="nav-arrow" id="next-slide" aria-label="다음 슬라이드"><i data-lucide="chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="presentation.js"></script>
+</body>
+</html>
