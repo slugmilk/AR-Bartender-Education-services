@@ -29,7 +29,7 @@
     <!-- SLIDES WRAPPER -->
     <div class="slides-container" id="slides-container">
         
-        <!-- SLIDE 1: TITLE -->
+        <!-- SLIDE 1: TITLE (INTRO) -->
         <section class="slide active" id="slide-1">
             <div class="slide-bg-glow"></div>
             <div class="slide-content title-slide">
@@ -38,7 +38,12 @@
                     AI 비전 기반 조주기능사<br>
                     <span class="text-gradient">실기 트레이닝 AR 솔루션</span>
                 </h1>
-                <p class="slide-sub-title">"실제 소모품 없이 센싱 기술로 체득하는 완벽한 칵테일 조주 실습"</p>
+                <p class="slide-sub-title">"물리적 소모품 ZERO화와 정밀 센싱 기술로 체득하는 스마트 칵테일 실습 환경"</p>
+                
+                <div class="glass-card title-summary-card mt-4 mb-4">
+                    <p>본 기획안은 실제 주류와 부재료의 낭비를 방지하면서, AR 글래스의 핸즈프리 시야 가이드 및 AI 비전 분석을 결합하여 조주기능사 자격시험 대비 효율성을 극대화하는 보조 학습 시스템을 제안합니다.</p>
+                </div>
+
                 <div class="presenter-info">
                     <span class="info-item"><i data-lucide="user"></i> 발표자 : 김유민 연구원</span>
                     <span class="info-item"><i data-lucide="building"></i> 소속 : SMIT XR 기술 혁신 센터</span>
@@ -49,31 +54,40 @@
             </div>
         </section>
 
-        <!-- SLIDE 2: BACKGROUND & PROBLEM -->
+        <!-- SLIDE 2: BACKGROUND & PROBLEM (COST CALCULATOR) -->
         <section class="slide" id="slide-2">
             <div class="slide-content">
                 <span class="slide-number-bg">02</span>
                 <div class="slide-header">
-                    <h2 class="slide-title">1. 제안 배경 및 목적</h2>
-                    <p class="slide-desc">기존 조주기능사 실습 교육이 마주한 비효율성과 한계를 극복해야 합니다.</p>
+                    <h2 class="slide-title">1. 제안 배경 및 필요성</h2>
+                    <p class="slide-desc">조주기능사 실기 준비 과정의 높은 경제적/교육적 물리적 진입 장벽</p>
                 </div>
                 <div class="slide-grid-2">
                     <div class="glass-card slide-card">
-                        <h3><i data-lucide="alert-triangle" class="text-danger"></i> 기존 실습의 3대 비효율</h3>
+                        <h3><i data-lucide="alert-triangle" class="text-danger"></i> 기존 실습의 3대 핵심 문제점</h3>
                         <ul class="bullet-list">
-                            <li><strong>누적되는 소모성 재료비:</strong> 술, 주스, 과일 가니시, 얼음 등 연습마다 소모되는 비용 발생</li>
-                            <li><strong>개인 연습 공간 부족:</strong> 조주대 및 전용 도구 세팅의 번거로움으로 학원 외 실습 제한</li>
-                            <li><strong>1대다 피드백의 구멍:</strong> 강사 1인이 여러 학생의 자세, 도구 파지, 붓는 각도를 전담하기 곤란</li>
+                            <li>
+                                <strong>지속적인 소모성 재료비 지출:</strong> 
+                                베이스 주류(스피릿, 리큐르), 가니시용 생과일, 얼음, 허브 등 1회 실습 시 소모되는 부재료비 누적으로 개인 수험생의 자가 실습이 극히 제한됩니다.
+                            </li>
+                            <li>
+                                <strong>교육 기관의 재료 관리 부하:</strong> 
+                                학원 및 관광 대학 등에서도 다수의 수강생이 소모하는 주류의 유통기한 관리, 얼음 공급 및 잔여 재료 폐기 처리로 인해 상당한 운영 관리 비용이 발생합니다.
+                            </li>
+                            <li>
+                                <strong>강사의 개별 동작 피드백 한계:</strong> 
+                                1인의 강사가 다수의 학생을 지도할 때, 각 학생의 계량 컵 수평 상태, 셰이킹 스피드, 바 스푼 회전 동작을 동시에 실시간으로 정밀 모니터링하기 어렵습니다.
+                            </li>
                         </ul>
                     </div>
 
                     <div class="glass-card slide-card calc-card">
                         <h3><i data-lucide="calculator" class="text-warning"></i> 실습 재료비 예측 시뮬레이터</h3>
-                        <p class="card-subtext">실제 칵테일 재료비와 AR 트레이너 도입 시 예상 절감 금액을 실시간 계산해보세요.</p>
+                        <p class="card-subtext">주당 연습량과 수강인원을 조절해 기존 방식 대비 절감할 수 있는 연간 소모 재료비를 예측해보세요.</p>
                         
                         <div class="calc-controls">
                             <div class="range-group">
-                                <label for="calc-students">학습 학생 수: <strong id="val-students">10명</strong></label>
+                                <label for="calc-students">학습 학생 수 (인원): <strong id="val-students">10명</strong></label>
                                 <input type="range" id="calc-students" min="1" max="50" value="10">
                             </div>
                             <div class="range-group">
@@ -88,8 +102,8 @@
                                 <strong class="text-danger" id="cost-original">125,000원</strong>
                             </div>
                             <div class="result-item">
-                                <span>AR 솔루션 도입 시 절감액 (연간)</span>
-                                <strong class="text-success" id="cost-saved">6,500,000원</strong>
+                                <span>AR 솔루션 도입 시 절감액 (연간 40주)</span>
+                                <strong class="text-success" id="cost-saved">5,000,000원</strong>
                             </div>
                         </div>
                     </div>
@@ -97,50 +111,61 @@
             </div>
         </section>
 
-        <!-- SLIDE 3: SERVICE OVERVIEW -->
+        <!-- SLIDE 3: SERVICE OVERVIEW (CONCEPT) -->
         <section class="slide" id="slide-3">
             <div class="slide-content">
                 <span class="slide-number-bg">03</span>
                 <div class="slide-header">
-                    <h2 class="slide-title">2. 서비스 개요</h2>
-                    <p class="slide-desc">실제 액체를 쓰지 않고 스마트 프랍과 AR HUD 화면으로 학습 흐름을 체득합니다.</p>
+                    <h2 class="slide-title">2. 서비스 개요 및 목적</h2>
+                    <p class="slide-desc">실제 주류를 대체하는 지능형 스마트 프랍과 시각 HUD 시스템 구축</p>
                 </div>
                 <div class="slide-grid-3">
-                    <div class="glass-card slide-card text-center">
+                    <div class="glass-card slide-card">
                         <div class="slide-icon-box cyan"><i data-lucide="box"></i></div>
-                        <h4>훈련용 스마트 프랍</h4>
-                        <p>내용물이 비어있는 병, 셰이커, 지거, 글라스에 AI 인식용 태그 및 특수 마커를 부착하여 실제 도구와 똑같은 손맛을 유지합니다.</p>
+                        <h4>훈련용 스마트 프랍 교구</h4>
+                        <p>실제 주류병과 똑같은 무게감의 빈 병, 메탈 셰이커, 지거, 바 스푼을 그대로 사용합니다. 각 프랍에는 AI 비전 인식이 가능한 라벨과 무광 특수 코딩 마커가 도포되어 감각적 이질감을 없앱니다.</p>
                     </div>
-                    <div class="glass-card slide-card text-center">
+                    <div class="glass-card slide-card">
                         <div class="slide-icon-box amber"><i data-lucide="eye"></i></div>
-                        <h4>AI 비전 트래킹</h4>
-                        <p>AR 글래스 카메라를 통해 사용자가 어떤 도구를 선택했는지, 기울기가 얼마인지, 셰이킹 빈도는 어떠한지 실시간 추정합니다.</p>
+                        <h4>AI 카메라 기반 1:1 트래킹</h4>
+                        <p>HMD/AR 글래스 전면 카메라가 조주 도구를 정밀 추적합니다. 병이 기울어지는 각도와 셰이킹 유지 시간을 초당 30프레임 이상으로 분석하여 정확한 행동 패턴 데이터를 추출합니다.</p>
                     </div>
-                    <div class="glass-card slide-card text-center">
+                    <div class="glass-card slide-card">
                         <div class="slide-icon-box pink"><i data-lucide="smartphone"></i></div>
-                        <h4>모바일 앱 연동</h4>
-                        <p>AR 기기가 없는 야외나 대중교통 등에서도 39가지 레시피 암기 모드, 제한 시간 시뮬레이터 및 누적 훈련 결과 리포트를 확인합니다.</p>
+                        <h4>모바일 연동 상시 복습</h4>
+                        <p>AR 디바이스가 없는 일상 공간에서도 스마트폰만으로 39종 출제 레시피 배치 퀴즈, 시간 관리 시뮬레이션을 수행하고, 본 훈련에서 수집된 자세 분석 리포트를 누적 관리합니다.</p>
                     </div>
+                </div>
+                <div class="glass-card mt-4 p-3 text-center">
+                    <span class="text-info">💡 <strong>교육 철학:</strong> 본 솔루션은 실제 실습을 완전히 제거하는 것이 아니라, 실제 실습 전후에 수험생이 동작 습관과 레시피를 반복 숙달하도록 돕는 강력한 훈련 보조 도구입니다.</span>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 4: CORE TECHNOLOGY - MARKER & HUD -->
+        <!-- SLIDE 4: CORE TECHNOLOGY 1 - PROPS & HUD -->
         <section class="slide" id="slide-4">
             <div class="slide-content">
                 <span class="slide-number-bg">04</span>
                 <div class="slide-header">
                     <h2 class="slide-title">3. 핵심 서비스 기능 (1) - 도구 인식 및 가이드</h2>
-                    <p class="slide-desc">정형화된 시험장 규격에 맞추어 완벽한 오버레이 가이드를 구축합니다.</p>
+                    <p class="slide-desc">시험장의 열악한 조명과 복잡한 상황에서도 작동하는 시각 증강 가이드</p>
                 </div>
                 <div class="slide-grid-2">
                     <div class="glass-card slide-card justify-center">
-                        <h3><i data-lucide="scan" class="text-info"></i> 마커 기반 조주 도구 식별</h3>
-                        <p class="mb-4">반사광이 심한 금속 셰이커나 투명한 유리잔의 특성을 감안한 하이브리드 비전 인식을 실현합니다.</p>
+                        <h3><i data-lucide="scan" class="text-info"></i> 하이브리드 비전 인식 및 트래킹</h3>
                         <ul class="bullet-list">
-                            <li><strong>병목 및 측면 다중 마커:</strong> 손 가림(Occlusion)이 발생하더라도 가려지지 않는 각도를 계산해 안정성 확보.</li>
-                            <li><strong>무광 특수 태그:</strong> 셰이커의 금속 반사를 방지하기 위한 컬러 태깅 기법.</li>
-                            <li><strong>전용 코스터 마커:</strong> 투명한 글라스 인식률을 극대화하기 위해 글라스 받침대에 마커를 배치.</li>
+                            <li>
+                                <strong>병목/측면 복수 마커 매핑:</strong> 
+                                푸어링 동작 시 사용자의 손가락이나 소매에 의해 마커가 가려지는 상황(Occlusion)을 극복하도록 다각도 중복 마커 알고리즘을 사용합니다.
+                            </li>
+                            <li>
+                                <strong>셰이커 반사 억제:</strong> 
+                                메탈 셰이커 특유의 빛 반사에 따른 난반사 오류를 차단하기 위해 무광 컬러 태그 및 특정 패턴 스티커를 부착합니다.
+                            </li>
+                            <li>
+                                <strong>글라스 코스터 트래킹:</strong> 
+                                투명하고 왜곡이 심한 유리잔은 직접 인식 대신 전용 위치 코스터(받침대) 마커를 인식하여 글라스의 평면 좌표와 입체를 매핑합니다.
+                            </li>
                         </ul>
                     </div>
 
@@ -148,20 +173,20 @@
                         <div class="mini-hud-title"><i data-lucide="glasses"></i> AR GLASSES HUD SIMULATION</div>
                         <div class="hud-box">
                             <div class="hud-element recipe-indicator">
-                                <span class="hud-label">레시피</span>
-                                <strong class="hud-value">위스키 사워 (Whiskey Sour)</strong>
+                                <span class="hud-label">진행 과제</span>
+                                <strong class="hud-value">드라이 마티니 (Dry Martini)</strong>
                             </div>
                             <div class="hud-element timer-indicator text-danger">
                                 <span class="hud-label">남은 시간</span>
-                                <strong class="hud-value"><i data-lucide="clock"></i> 05:12</strong>
+                                <strong class="hud-value"><i data-lucide="clock"></i> 02:30 / 07:00</strong>
                             </div>
                             <div class="hud-target-ring animate-pulse">
-                                <span class="ring-status">계량 지거 인식됨</span>
-                                <div class="ring-bar"><div class="ring-fill"></div></div>
-                                <span class="ring-instruction">버번 위스키 1.5 oz 투입</span>
+                                <span class="ring-status">지거 인식 (100% 매칭)</span>
+                                <div class="ring-bar"><div class="ring-fill" style="width: 33%;"></div></div>
+                                <span class="ring-instruction">드라이 진 1.5 oz 계량 중...</span>
                             </div>
                             <div class="hud-alert-box">
-                                ⚠️ 경고: 수평 불량! 지거를 바닥과 평행하게 유지하세요.
+                                ⚠️ 경고: 수평 기울기 이탈 감지! (+0.1oz 계량 편차 우려)
                             </div>
                         </div>
                     </div>
@@ -169,18 +194,18 @@
             </div>
         </section>
 
-        <!-- SLIDE 5: CORE TECHNOLOGY - POURING & POSTURE -->
+        <!-- SLIDE 5: CORE TECHNOLOGY 2 - POURING & POSTURE -->
         <section class="slide" id="slide-5">
             <div class="slide-content">
                 <span class="slide-number-bg">05</span>
                 <div class="slide-header">
-                    <h2 class="slide-title">4. 핵심 서비스 기능 (2) - 모션 계량 및 자세 분석</h2>
-                    <p class="slide-desc">액체 유량 센서 없이도 AI 카메라 센싱으로 행동 점수를 측정합니다.</p>
+                    <h2 class="slide-title">4. 핵심 서비스 기능 (2) - 계량 및 포즈 피드백</h2>
+                    <p class="slide-desc">센서 없는 카메라 화면으로 이뤄지는 정밀한 모션 점수화</p>
                 </div>
                 <div class="slide-grid-2">
                     <div class="glass-card slide-card skeletal-card">
-                        <h3><i data-lucide="person-standing" class="text-violet"></i> AI 포즈 추정 상반신 본 트래킹</h3>
-                        <p class="card-subtext">셰이킹 스피드와 스터링의 회전 궤적을 측정하기 위한 상반신 랜드마크 분석</p>
+                        <h3><i data-lucide="person-standing" class="text-violet"></i> 온디바이스 실시간 관절 랜드마크 분석</h3>
+                        <p class="card-subtext">바른 조주 자세와 동작 일관성을 형성하기 위한 상반신 랜드마크 추정</p>
                         
                         <div class="skeletal-visual">
                             <div class="skeleton-node" style="top: 25%; left: 50%;"></div> <!-- Head -->
@@ -201,37 +226,45 @@
                                 <line x1="50" y1="130" x2="70" y2="150" stroke="var(--color-cyan)" stroke-width="3" />
                                 <line x1="150" y1="130" x2="130" y2="150" stroke="var(--color-cyan)" stroke-width="3" />
                             </svg>
-                            <span class="skeletal-status">셰이킹 스냅 감지: 4.8Hz (안정)</span>
+                            <span class="skeletal-status">셰이킹 스냅 감지: 4.8Hz (적정)</span>
                         </div>
                     </div>
 
                     <div class="glass-card slide-card justify-center">
-                        <h3><i data-lucide="bar-chart-2" class="text-pink"></i> 푸어링 각도 및 자세 분석 알고리즘</h3>
-                        <p class="mb-4">실제 시험 채점관의 가이드라인에 부합하는 자동 평가 방식을 채택합니다.</p>
+                        <h3><i data-lucide="bar-chart-2" class="text-pink"></i> 감점 요인 사후 적출 알고리즘</h3>
                         <ul class="bullet-list">
-                            <li><strong>기울기-시간 센싱:</strong> 병이 기울어진 각도와 액체가 배출되는 시간 간격을 곱셈 연산하여 가상 용량 유추 (오차 범위 0.15oz 미만).</li>
-                            <li><strong>자세 감점 교정:</strong> 셰이킹 동작 시 팔목이 어깨 선보다 낮게 위치하거나, 스터링 시 바 스푼이 과도하게 눕는 자세 자동 감지.</li>
-                            <li><strong>시간 관리 알림:</strong> 각 칵테일의 완성 제한 시간을 실시간 타이머와 함께 시각/청각 피드백으로 경고.</li>
+                            <li>
+                                <strong>기울기-시간 센싱 (Flow Estimation):</strong> 
+                                병이 특정 임계 각도 이상 기울어지는 모션과 해당 상태가 지속된 밀리초(ms) 시간 데이터를 곱하여 가상 주입 용량을 오차 범위 0.15oz 이내로 시뮬레이션합니다.
+                            </li>
+                            <li>
+                                <strong>셰이킹 자세 피드백:</strong> 
+                                셰이커의 왕복 주파수(Hz), 팔꿈치가 몸통에서 지나치게 떨어지거나 어깨선 아래로 떨어지는 잘못된 셰이킹 자세를 AI 본 트래킹으로 실시간 코칭합니다.
+                            </li>
+                            <li>
+                                <strong>동작 완료 검출:</strong> 
+                                스터링(스터 10회 이상), 가니시 도구 사용 여부 등 실제 자격시험 감점 규격을 이진 판정(Binary classification)하여 기록합니다.
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 6: SYSTEM CONFIGURATION -->
+        <!-- SLIDE 6: SYSTEM ARCHITECTURE -->
         <section class="slide" id="slide-6">
             <div class="slide-content">
                 <span class="slide-number-bg">06</span>
                 <div class="slide-header">
                     <h2 class="slide-title">5. 시스템 구성 및 기술 구현 방향</h2>
-                    <p class="slide-desc">실시간 렌더링 성능과 반응 속도를 최우선으로 아키텍처를 설계합니다.</p>
+                    <p class="slide-desc">반응 반응성 확보와 멀미 유발 방지를 위한 엔지니어링 설계</p>
                 </div>
                 <div class="system-diagram-wrapper">
                     <!-- Column 1 -->
                     <div class="diagram-node">
                         <div class="node-box glass-card border-cyan">
-                            <span class="node-title">사용자 환경</span>
-                            <p class="node-content">훈련용 마커 프랍<br>AR 글래스 카메라</p>
+                            <span class="node-title">훈련용 프랍 / 글래스</span>
+                            <p class="node-content">마커 부착 스마트 프랍 교구<br>1인칭 RGB 카메라 센서</p>
                         </div>
                     </div>
                     <div class="diagram-arrow"><i data-lucide="arrow-right"></i></div>
@@ -239,7 +272,7 @@
                     <div class="diagram-node">
                         <div class="node-box glass-card border-amber">
                             <span class="node-title">온디바이스 AI 모듈</span>
-                            <p class="node-content">ONNX 경량 객체 감지<br>상반신 포즈 추정 엔진</p>
+                            <p class="node-content">ONNX 포맷 객체 추정 모델<br>상반신 본(Bone) 검출 모델</p>
                         </div>
                     </div>
                     <div class="diagram-arrow"><i data-lucide="arrow-right"></i></div>
@@ -247,27 +280,28 @@
                     <div class="diagram-node">
                         <div class="node-box glass-card border-pink">
                             <span class="node-title">Unity 클라이언트</span>
-                            <p class="node-content">실시간 AR HUD 오버레이<br>칵테일 3D 파티클 효과</p>
+                            <p class="node-content">3D UI 가이드 렌더러<br>가상 푸어링 파티클 엔진</p>
                         </div>
                     </div>
                     <div class="diagram-arrow"><i data-lucide="arrow-right"></i></div>
                     <!-- Column 4 -->
                     <div class="diagram-node">
                         <div class="node-box glass-card border-violet">
-                            <span class="node-title">서버 / 모바일</span>
-                            <p class="node-content">레시피 DB 동기화<br>연습 결과 리포트 저장</p>
+                            <span class="node-title">학습 백서 / 동기화</span>
+                            <p class="node-content">SQLite 기반 모바일 로컬 DB<br>누적 모션 리포트 클라우드</p>
                         </div>
                     </div>
                 </div>
-                <div class="glass-card slide-card tech-bullets mt-5">
+                
+                <div class="glass-card slide-card tech-bullets mt-4">
                     <div class="tech-grid">
                         <div class="tech-item">
-                            <strong>1. 경량화 추론</strong>
-                            <span>Unity 내Barracuda 또는 Sentis 프레임워크를 탑재하여 연산 프레임 하락을 최소화합니다.</span>
+                            <strong>⚡ 온디바이스 추론 경량화</strong>
+                            <span>네트워크 지연으로 인한 피드백 단절을 방지하기 위해 경량화된 AI 모델을 Unity Sentis 및 Barracuda 환경에서 실행하여 30fps 이상의 실시간 추론 성능을 보장합니다.</span>
                         </div>
                         <div class="tech-item">
-                            <strong>2. 비동기 렌더링</strong>
-                            <span>도구 스캔 및 포즈 추정을 특정 프레임 주기로 스킵 처리하여 멀미 유발(VR sickness)을 억제합니다.</span>
+                            <strong>🔄 비동기 프레임 스킵 렌더링</strong>
+                            <span>연산량이 큰 AI 관절 인식과 도구 감지는 3~5 프레임 주기로 스킵 처리하되, 유저 시야를 담당하는 AR UI 렌더링은 보간(Interpolation) 기술을 사용해 항상 부드럽게 유지하여 피로도를 예방합니다.</span>
                         </div>
                     </div>
                 </div>
@@ -279,8 +313,8 @@
             <div class="slide-content">
                 <span class="slide-number-bg">07</span>
                 <div class="slide-header">
-                    <h2 class="slide-title">6. 사용자 시나리오 (인터랙티브 타임라인)</h2>
-                    <p class="slide-desc">실습 세션 시작부터 리포트 확인까지 자연스러운 사용자 흐름을 구현합니다.</p>
+                    <h2 class="slide-title">6. 사용자 시나리오 (상세 실습 흐름)</h2>
+                    <p class="slide-desc">실제 기기 착용부터 시험 리포트 생성까지의 완벽한 디지털 파이프라인</p>
                 </div>
                 
                 <div class="scenario-timeline-container">
@@ -296,7 +330,7 @@
                         <h3 id="timeline-detail-title">1단계: 과제 선택</h3>
                         <p id="timeline-detail-desc" class="mb-4">사용자는 모바일 앱 또는 AR 화면 내 UI에서 실습할 칵테일(예: 드라이 마티니)을 선택하고 타이머 훈련을 활성화합니다.</p>
                         <div class="timeline-visual-mock" id="timeline-visual-mock">
-                            <span>📱 스마트폰 화면: 레시피 목록 대시보드</span>
+                            <span>📱 스마트폰 화면: 레시피 목록 대시보드 및 실습 로드 완료</span>
                         </div>
                     </div>
                 </div>
@@ -309,26 +343,44 @@
                 <span class="slide-number-bg">08</span>
                 <div class="slide-header">
                     <h2 class="slide-title">7. 비즈니스 모델 및 활용처</h2>
-                    <p class="slide-desc">안정적인 하드웨어 패키지 공급과 유연한 구독 모델로 동시 진입합니다.</p>
+                    <p class="slide-desc">정량적 재료 예산 절감 모델과 모바일 연계 서비스를 결합한 투트랙 사업화</p>
                 </div>
                 <div class="slide-grid-2">
                     <div class="glass-card slide-card">
-                        <h3>🏢 B2B 교육기관 타겟 패키지</h3>
-                        <p class="card-subtext">직업학교, 바텐더 전문 아카데미, 관광대학교 식음료학과</p>
+                        <h3>🏢 B2B 교육기관 공급 패키지</h3>
+                        <p class="card-subtext">바텐더 전문학원, 대학 식음료 및 소믈리에 학과, 호텔 트레이닝 아카데미</p>
                         <ul class="bullet-list">
-                            <li><strong>다중 라이선스 및 통합 대시보드:</strong> 강사가 수십 명 학생의 훈련 진행률과 약점 레시피 통계를 일목요연하게 파악 가능.</li>
-                            <li><strong>정규 시험 모의고사 모드:</strong> 실제 조주기능사 실기 시험과 동일한 타이머 조건 및 감점 알고리즘 적용 평가권 판매.</li>
-                            <li><strong>프랍 하드웨어 일괄 렌탈:</strong> 인식용 마커 스티커가 도포된 훈련용 병 및 도구 키트 일괄 보급.</li>
+                            <li>
+                                <strong>통합 교육용 관리자 콘솔:</strong> 
+                                여러 학생의 주간 연습 현황, 자주 위반하는 오버 푸어링 경고 빈도, 개별 감점 유발 레시피 통계 데이터를 시각 대시보드로 제공하여 정밀 보충 지도를 지원합니다.
+                            </li>
+                            <li>
+                                <strong>표준화 훈련용 하드웨어 번들:</strong> 
+                                마커 처리 완료된 바 도구(셰이커, 지거, 글라스) 세트 및 AR 글래스 단말기를 결합하여 B2B 임대/리스 방식으로 보급합니다.
+                            </li>
+                            <li>
+                                <strong>모의고사 평가 구독 라이선스:</strong> 
+                                연간 기관 단위 결제 시 조주기능사 실기 모의고사 기출 모드를 무제한 실행할 수 있는 SaaS 권한을 부여합니다.
+                            </li>
                         </ul>
                     </div>
 
                     <div class="glass-card slide-card">
-                        <h3>🏠 B2C 개인 홈트레이닝 솔루션</h3>
-                        <p class="card-subtext">조주기능사 독학 준비 수험생, 홈바(Home Bar) 취미 사용자</p>
+                        <h3>🏠 B2C 독학 수험생 홈 패키지</h3>
+                        <p class="card-subtext">조주기능사 독학을 준비하는 개인 수험생, 칵테일 취미 입문자</p>
                         <ul class="bullet-list">
-                            <li><strong>모바일 구독형 라이선스:</strong> 월 정액 요금(19,000원) 결제 시 39종 실기 칵테일 가이드 및 자세 체크봇 무제한 개방.</li>
-                            <li><strong>홈 트레이닝 셀프 스티커 키트:</strong> 사용자가 보유한 기존 소장 병이나 빈 병에 붙여 센싱을 켜는 접착식 마커 세트 온라인 판매.</li>
-                            <li><strong>모의 테스트 쿠폰권:</strong> 실기 시험 직전, AI 정밀 채점 리포트를 받아볼 수 있는 프리미엄 테스트권 개별 판매.</li>
+                            <li>
+                                <strong>스마트폰/글래스 라이선스 구독:</strong> 
+                                월 19,000원의 저렴한 구독료로 39가지 조주기능사 공식 레시피 HUD 가이드 및 카메라 기반 상반신 셰이킹 코칭 알고리즘을 무제한 개방합니다.
+                            </li>
+                            <li>
+                                <strong>자가 제작용 마커 스티커 판매:</strong> 
+                                수험생이 집에서 직접 다 쓴 공병이나 저렴한 바 도구에 부착하여 시스템에 등록해 사용할 수 있는 규격화 마커 스티커 키트를 우편 배송 판매합니다.
+                            </li>
+                            <li>
+                                <strong>프리미엄 채점 보고서:</strong> 
+                                자격시험 일주일 전, 실제 채점관의 체크리스트와 99% 유사하게 채점되는 시뮬레이터 실전 리포트 이용권을 충전식으로 판매합니다.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -339,17 +391,18 @@
         <section class="slide" id="slide-9">
             <div class="slide-bg-glow" style="background: radial-gradient(circle at 50% 50%, rgba(0, 245, 212, 0.08) 0%, transparent 60%);"></div>
             <div class="slide-content text-center conclusion-slide">
-                <span class="slide-badge"><i data-lucide="check-square"></i> Conclusion & Value Proposition</span>
+                <span class="slide-badge"><i data-lucide="check-square"></i> Expected Benefits & Conclusion</span>
                 <h1 class="slide-main-title">
-                    조주 실습의 미래,<br>
-                    <span class="text-gradient">AR 조주 트레이너로 시작합니다</span>
+                    조주 교육의 디지털 패러다임 전환,<br>
+                    <span class="text-gradient">AR 조주 트레이너가 선도합니다</span>
                 </h1>
                 <p class="slide-sub-title max-w-650">
-                    본 솔루션은 칵테일을 쉽게 만드는 임시 도구가 아닙니다. 비용 부담 없는 반복 훈련 환경을 구축하여 조주기능사 수험생의 자격 취득 확률을 증대하고 교육의 디지털 전환을 이끄는 실용적인 XR 플랫폼입니다.
+                    본 솔루션은 단순한 게임성 칵테일 제조 안내를 지양하며, 소모성 재료 폐기 최소화와 무제한 반복형 자세 훈련을 통해 조주기능사 교육 기관의 비용을 낮추고 학생들의 자격시험 합격 가능성을 배가하는 지속 가능한 친환경 스마트 실습 체널입니다.
                 </p>
                 <div class="qna-box">
                     <h3>Q & A</h3>
-                    <p>발표를 경청해 주셔서 감사합니다. 질문이 있으시면 편하게 말씀해 주시기 바랍니다.</p>
+                    <p>본 제안에 관해 궁금하신 점이나 추가 기술 연동에 관련된 질문이 있으시면 편하게 문의해 주시기 바랍니다.</p>
+                    <p class="mt-2 text-muted" style="font-size:0.8rem;"><i data-lucide="mail"></i> contact@arbartrainer.com / <i data-lucide="phone"></i> 02-1234-5678</p>
                 </div>
             </div>
         </section>
